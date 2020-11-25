@@ -105,13 +105,48 @@ public class SinglyLinkedList<String> {
         return false;
     }
 
-    public boolean contains(){return true;}
+    public boolean contains(Object data){
+        Node current = head;
+        if (current.getData() == data){
+            return true;
+        } else {
+            while (current.getNext() != null){
+                current = current.getNext();
+                if (current.getData() == data) return true;
+            }
+        }
+        return false;
+    }
 
-    public int find(){return -1;}
+    public int find(Object data){
+        int indexOfData = -1;
+        Node current = head;
+        if (current.getData() == data){
+            indexOfData = 0;
+            return indexOfData;
+        } else {
+            while (current.getData() != data && current.getNext() != null){
+                current = current.getNext();
+                if (current.getData() == data){
+                    indexOfData++;
+                    return indexOfData;
+                }
+            }
+        }
+        return indexOfData;
+    }
 
     public int size(){return getCounter();}
 
-    public LinkedList copy(){return null;}
+    public SinglyLinkedList copy(){return null;}
 
-    public LinkedList sort(){return null;}
+    public SinglyLinkedList sort(){return null;}
+
+    //optional reverse method
+    //public SinglyLinkedList reverse(){return null;}
+
+    //optional slice method
+    //public SinglyLinkedList reverse(){return null;}
+
+    //optional: can make this list a generic class that can store any kind of object
 }
