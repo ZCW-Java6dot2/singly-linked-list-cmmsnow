@@ -141,7 +141,14 @@ public class SinglyLinkedList<String> {
     public int size(){return getCounter();}
 
     public SinglyLinkedList copy(){
-        return null;
+        SinglyLinkedList singlyLinkedList2 = new SinglyLinkedList();
+        Node current = head;
+        singlyLinkedList2.add(current.getData());
+        while (current.getNext() != null){
+            current = current.getNext();
+            singlyLinkedList2.add(current.getData());
+        }
+        return singlyLinkedList2;
     }
 
     public SinglyLinkedList sort(){

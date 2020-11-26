@@ -89,9 +89,14 @@ public class SinglyLinkedListTest {
 
     @Test
     public void testCopy(){
-        //given
-        //when
-        //then
+        SinglyLinkedList singlyLinkedList1 = new SinglyLinkedList();
+        singlyLinkedList1.add("Mary");
+        singlyLinkedList1.add("June");
+        singlyLinkedList1.add("Stef");
+        SinglyLinkedList singlyLinkedList2 = singlyLinkedList1.copy();
+        Object expected = singlyLinkedList1.contains("Stef");
+        Object actual = singlyLinkedList2.contains("Stef");
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
