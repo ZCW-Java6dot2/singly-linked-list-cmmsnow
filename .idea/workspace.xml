@@ -61,7 +61,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
-  <component name="RunManager" selected="JUnit.SinglyLinkedListTest.testCopy">
+  <component name="RunManager" selected="JUnit.SinglyLinkedListTest.testReverse">
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
       <module name="" />
       <option name="TESTING_TYPE" value="0" />
@@ -183,7 +183,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SinglyLinkedListTest.testSize" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SinglyLinkedListTest.testReverse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="singlylinkedlist" />
       <extension name="coverage">
         <pattern>
@@ -193,7 +193,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.zipcodewilmington.singlylinkedlist" />
       <option name="MAIN_CLASS_NAME" value="com.zipcodewilmington.singlylinkedlist.SinglyLinkedListTest" />
-      <option name="METHOD_NAME" value="testSize" />
+      <option name="METHOD_NAME" value="testReverse" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
@@ -261,11 +261,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SinglyLinkedListTest.testReverse" />
         <item itemvalue="JUnit.SinglyLinkedListTest.testCopy" />
         <item itemvalue="JUnit.SinglyLinkedListTest" />
         <item itemvalue="JUnit.SinglyLinkedListTest.testAdd2" />
         <item itemvalue="JUnit.SinglyLinkedListTest.testFind" />
-        <item itemvalue="JUnit.SinglyLinkedListTest.testSize" />
       </list>
     </recent_temporary>
   </component>
@@ -297,21 +297,21 @@
       <screen x="0" y="25" width="1280" height="775" />
     </state>
     <state x="605" y="132" key="#com.intellij.ide.util.MemberChooser/0.25.1280.775@0.25.1280.775" timestamp="1606168065581" />
-    <state width="1217" height="187" key="GridCell.Tab.0.bottom" timestamp="1606406752861">
+    <state width="1217" height="187" key="GridCell.Tab.0.bottom" timestamp="1606407622260">
       <screen x="0" y="25" width="1280" height="775" />
     </state>
-    <state width="1217" height="187" key="GridCell.Tab.0.bottom/0.25.1280.775@0.25.1280.775" timestamp="1606406752861" />
-    <state width="1217" height="187" key="GridCell.Tab.0.center" timestamp="1606406752860">
+    <state width="1217" height="187" key="GridCell.Tab.0.bottom/0.25.1280.775@0.25.1280.775" timestamp="1606407622260" />
+    <state width="1217" height="187" key="GridCell.Tab.0.center" timestamp="1606407622259">
       <screen x="0" y="25" width="1280" height="775" />
     </state>
-    <state width="1217" height="187" key="GridCell.Tab.0.center/0.25.1280.775@0.25.1280.775" timestamp="1606406752860" />
-    <state width="1217" height="187" key="GridCell.Tab.0.left" timestamp="1606406752860">
+    <state width="1217" height="187" key="GridCell.Tab.0.center/0.25.1280.775@0.25.1280.775" timestamp="1606407622259" />
+    <state width="1217" height="187" key="GridCell.Tab.0.left" timestamp="1606407622259">
       <screen x="0" y="25" width="1280" height="775" />
     </state>
-    <state width="1217" height="187" key="GridCell.Tab.0.left/0.25.1280.775@0.25.1280.775" timestamp="1606406752860" />
-    <state width="1217" height="187" key="GridCell.Tab.0.right" timestamp="1606406752861">
+    <state width="1217" height="187" key="GridCell.Tab.0.left/0.25.1280.775@0.25.1280.775" timestamp="1606407622259" />
+    <state width="1217" height="187" key="GridCell.Tab.0.right" timestamp="1606407622260">
       <screen x="0" y="25" width="1280" height="775" />
     </state>
-    <state width="1217" height="187" key="GridCell.Tab.0.right/0.25.1280.775@0.25.1280.775" timestamp="1606406752861" />
+    <state width="1217" height="187" key="GridCell.Tab.0.right/0.25.1280.775@0.25.1280.775" timestamp="1606407622260" />
   </component>
 </project>

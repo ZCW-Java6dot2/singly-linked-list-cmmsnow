@@ -107,6 +107,18 @@ public class SinglyLinkedListTest {
     }
 
     @Test
+    public void testReverse(){
+        SinglyLinkedList singlyLinkedList = new SinglyLinkedList();
+        singlyLinkedList.add("Mary");
+        singlyLinkedList.add("June");
+        singlyLinkedList.add("Stef");
+        SinglyLinkedList reversedList = singlyLinkedList.reverse();
+        int expected = singlyLinkedList.find("Mary");
+        int actual = reversedList.find("Mary");
+        Assert.assertNotEquals(expected, actual);
+    }
+
+    @Test
     public void testNodeGetData(){
         //given
         //Node node = new Node();

@@ -157,8 +157,15 @@ public class SinglyLinkedList<String> {
         return null;
     }
 
-    //optional
-    //public SinglyLinkedList reverse(){return null;}
+    public SinglyLinkedList reverse(){
+        int size = size();
+        int finalIndex = size-1;
+        SinglyLinkedList reversedList = new SinglyLinkedList();
+        for (int i=finalIndex; i>=0; i--){
+            reversedList.add(get(finalIndex));
+        }
+        return reversedList;
+    }
 
     //optional
     //public SinglyLinkedList slice(){return null;}
