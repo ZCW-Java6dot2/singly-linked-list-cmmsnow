@@ -7,10 +7,10 @@ import org.junit.Test;
  * Created by leon on 1/10/18.
  */
 public class SinglyLinkedListTest {
-    SinglyLinkedList singlyLinkedList = new SinglyLinkedList();
 
     @Test
     public void testAdd1(){
+        SinglyLinkedList singlyLinkedList = new SinglyLinkedList();
         Object expected = "Mary";
         singlyLinkedList.add(expected);
         Assert.assertTrue(singlyLinkedList.contains(expected));
@@ -18,14 +18,18 @@ public class SinglyLinkedListTest {
 
     @Test
     public void testAdd2(){
-        int expected = 0;
+        SinglyLinkedList singlyLinkedList = new SinglyLinkedList();
+        singlyLinkedList.add("Mary");
+        singlyLinkedList.add("Sally");
+        int expected = 1;
         singlyLinkedList.add("June", expected);
         int actual = singlyLinkedList.find("June");
         Assert.assertEquals(expected, actual);
     }
 
     @Test
-    public void testGetCounter(){  // NOT WORKING!!******************
+    public void testGetCounter(){
+        SinglyLinkedList singlyLinkedList = new SinglyLinkedList();
         singlyLinkedList.add("Mary");
         singlyLinkedList.add("June");
         int expected = 2;
@@ -35,6 +39,7 @@ public class SinglyLinkedListTest {
 
     @Test
     public void testGet(){
+        SinglyLinkedList singlyLinkedList = new SinglyLinkedList();
         Object expected = "June";
         singlyLinkedList.add(expected);
         singlyLinkedList.add("Mary");
@@ -43,7 +48,8 @@ public class SinglyLinkedListTest {
     }
 
     @Test
-    public void testRemove(){  // NOT WORKING!***************************
+    public void testRemove(){
+        SinglyLinkedList singlyLinkedList = new SinglyLinkedList();
         singlyLinkedList.add("Mary");
         singlyLinkedList.add("June");
         int original = singlyLinkedList.size();
@@ -54,12 +60,14 @@ public class SinglyLinkedListTest {
 
     @Test
     public void testContains(){
+        SinglyLinkedList singlyLinkedList = new SinglyLinkedList();
         singlyLinkedList.add("Mary");
         Assert.assertTrue(singlyLinkedList.contains("Mary"));
     }
 
     @Test
     public void testFind(){  // NOT WORKING!**************************
+        SinglyLinkedList singlyLinkedList = new SinglyLinkedList();
         singlyLinkedList.add("Mary");
         singlyLinkedList.add("June");
         singlyLinkedList.add("Stef");
@@ -69,7 +77,8 @@ public class SinglyLinkedListTest {
     }
 
     @Test
-    public void testSize(){  // NOT WORKING!***********************
+    public void testSize(){
+        SinglyLinkedList singlyLinkedList = new SinglyLinkedList();
         singlyLinkedList.add("Mary");
         singlyLinkedList.add("June");
         singlyLinkedList.add("Stef");

@@ -1,6 +1,5 @@
 package com.zipcodewilmington.singlylinkedlist;
 
-import java.util.LinkedList;
 
 /**
  * Created by leon on 1/10/18.
@@ -44,7 +43,8 @@ public class SinglyLinkedList<String> {
 
     public SinglyLinkedList(){
         head = new Node(null);
-        listCount = 0;
+        //listCount = 0;
+        counter = 0;
     }
 
     public void add(Object data){
@@ -54,7 +54,8 @@ public class SinglyLinkedList<String> {
             current = current.getNext();
         }
         current.setNext(temp);
-        listCount++;
+        //listCount++;
+        counter++;
     }
 
     private static int getCounter(){
@@ -119,34 +120,41 @@ public class SinglyLinkedList<String> {
     }
 
     public int find(Object data){
-        int indexOfData = -1;
+        int indexOfData = 0;
         Node current = head;
-        if (current.getData() == data){
-            indexOfData = 0;
-            return indexOfData;
-        } else {
-            while (current.getData() != data && current.getNext() != null){
-                current = current.getNext();
-                if (current.getData() == data){
-                    indexOfData++;
-                    return indexOfData;
+        if (contains(data)){
+            if (current.getData() == data){
+                return indexOfData;
+            } else {
+                while (current.getData() != data && current.getNext() != null){
+                    current = current.getNext();
+                    if (current.getData() == data){
+                        indexOfData++;
+                        return indexOfData;
+                    }
                 }
             }
-        }
+        } else indexOfData = -1;
         return indexOfData;
     }
 
     public int size(){return getCounter();}
 
-    public SinglyLinkedList copy(){return null;}
+    public SinglyLinkedList copy(){
+        return null;
+    }
 
-    public SinglyLinkedList sort(){return null;}
+    public SinglyLinkedList sort(){
+        //iterator
+        //comparator
+        return null;
+    }
 
-    //optional reverse method
+    //optional
     //public SinglyLinkedList reverse(){return null;}
 
-    //optional slice method
-    //public SinglyLinkedList reverse(){return null;}
+    //optional
+    //public SinglyLinkedList slice(){return null;}
 
     //optional: can make this list a generic class that can store any kind of object
 }
