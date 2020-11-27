@@ -100,13 +100,6 @@ public class SinglyLinkedListTest {
     }
 
     @Test
-    public void testSort(){
-        //given
-        //when
-        //then
-    }
-
-    @Test
     public void testReverse(){
         SinglyLinkedList singlyLinkedList = new SinglyLinkedList();
         singlyLinkedList.add("Mary");
@@ -116,6 +109,13 @@ public class SinglyLinkedListTest {
         int expected = singlyLinkedList.find("Mary");
         int actual = reversedList.find("Mary");
         Assert.assertNotEquals(expected, actual);
+    }
+
+    @Test
+    public void testSort(){
+        //given
+        //when
+        //then
     }
 
     @Test

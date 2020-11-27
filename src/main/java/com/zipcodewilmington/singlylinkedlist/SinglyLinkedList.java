@@ -4,10 +4,11 @@ package com.zipcodewilmington.singlylinkedlist;
 /**
  * Created by leon on 1/10/18.
  */
-public class SinglyLinkedList<String> {
+public class SinglyLinkedList<Object> implements Comparable<Object> {
+    //  ONLY "SORT" NOT WORKING DUE TO COMPARABLE - IDK HOW TO FIX   ******************
     private static int counter;
 
-    class Node{
+    class Node {
         Node next;
         Object data;
 
@@ -36,10 +37,15 @@ public class SinglyLinkedList<String> {
             this.next = nextValue;
             this.data = dataValue;
         }
+
+//        public int compareTo(Node o) {
+//            return getData().compareTo(o.getData());
+//        }
     }
 
     private Node head;
-    private int listCount;
+    private Node current;
+    //private int listCount;
 
     public SinglyLinkedList(){
         head = new Node(null);
@@ -87,7 +93,7 @@ public class SinglyLinkedList<String> {
             }
             return current.getData();
         }
-        return current;
+        return current.getData();
     }
 
     public boolean remove(int index){
@@ -151,12 +157,6 @@ public class SinglyLinkedList<String> {
         return singlyLinkedList2;
     }
 
-    public SinglyLinkedList sort(){
-        //iterator
-        //comparator
-        return null;
-    }
-
     public SinglyLinkedList reverse(){
         int size = size();
         int finalIndex = size-1;
@@ -165,6 +165,28 @@ public class SinglyLinkedList<String> {
             reversedList.add(get(finalIndex));
         }
         return reversedList;
+    }
+
+    public int compareTo(Object o) {
+        return current.getData().compareTo(o.getData());
+        //HOW TO FIX THIS?************************************************************
+    }
+
+    public SinglyLinkedList sort(){
+        Node previous = null;
+        Node current = head;
+        Node next = current.getNext();
+        while (next != null){
+            int compared = (current).compareTo(next); //also obviously grumpy**********
+            if (compared > 0){
+                previous = current;
+                current = next;
+            } else if (compared < 0){
+                previous = next;
+
+            }
+        }
+        return null;
     }
 
     //optional
