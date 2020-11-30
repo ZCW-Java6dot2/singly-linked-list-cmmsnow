@@ -114,8 +114,16 @@ public class SinglyLinkedListTest {
     @Test
     public void testSort(){
         //given
+        SinglyLinkedList singlyLinkedList = new SinglyLinkedList();
+        singlyLinkedList.add(7);
+        singlyLinkedList.add(4);
+        singlyLinkedList.add(10);
+        SinglyLinkedList sortedList = singlyLinkedList.sort();
+        Object expected = 4;
         //when
+        Object actual = sortedList.get(0);
         //then
+        Assert.assertEquals(expected, actual);
     }
 
     @Test

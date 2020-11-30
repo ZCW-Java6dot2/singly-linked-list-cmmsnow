@@ -4,8 +4,8 @@ package com.zipcodewilmington.singlylinkedlist;
 /**
  * Created by leon on 1/10/18.
  */
-public class SinglyLinkedList<Object> implements Comparable<Object> {
-    //  ONLY "SORT" NOT WORKING DUE TO COMPARABLE - IDK HOW TO FIX   ******************
+public class SinglyLinkedList<Object> {
+    //  ONLY "SORT" NOT WORKING ************************************
     private static int counter;
 
     class Node {
@@ -37,10 +37,6 @@ public class SinglyLinkedList<Object> implements Comparable<Object> {
             this.next = nextValue;
             this.data = dataValue;
         }
-
-//        public int compareTo(Node o) {
-//            return getData().compareTo(o.getData());
-//        }
     }
 
     private Node head;
@@ -167,23 +163,18 @@ public class SinglyLinkedList<Object> implements Comparable<Object> {
         return reversedList;
     }
 
-    public int compareTo(Object o) {
-        return current.getData().compareTo(o.getData());
-        //HOW TO FIX THIS?************************************************************
-    }
-
     public SinglyLinkedList sort(){
+        //USE BUBBLE SORT FOR THIS************************************************THIS IS GRUMPY
         Node previous = null;
         Node current = head;
         Node next = current.getNext();
         while (next != null){
-            int compared = (current).compareTo(next); //also obviously grumpy**********
-            if (compared > 0){
+            if ((current.getData()).compareTo(next.getData()) >= 0){
+                // tried to use >= instead. Wont allow it on Objects. "compareTo" unhappy due to lack of interface?
                 previous = current;
                 current = next;
-            } else if (compared < 0){
+            } else {
                 previous = next;
-
             }
         }
         return null;
