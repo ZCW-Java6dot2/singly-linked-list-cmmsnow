@@ -11,7 +11,7 @@ public class SinglyLinkedListTest {
     @Test
     public void testAdd1(){
         SinglyLinkedList singlyLinkedList = new SinglyLinkedList();
-        Object expected = "Mary";
+        String expected = "Mary";
         singlyLinkedList.add(expected);
         Assert.assertTrue(singlyLinkedList.contains(expected));
     }
@@ -40,7 +40,7 @@ public class SinglyLinkedListTest {
     @Test
     public void testGet(){
         SinglyLinkedList singlyLinkedList = new SinglyLinkedList();
-        Object expected = "June";
+        String expected = "June";
         singlyLinkedList.add(expected);
         singlyLinkedList.add("Mary");
         Object actual = singlyLinkedList.get(0);
@@ -113,17 +113,23 @@ public class SinglyLinkedListTest {
 
     @Test
     public void testSort(){
-        //given
         SinglyLinkedList singlyLinkedList = new SinglyLinkedList();
         singlyLinkedList.add(7);
         singlyLinkedList.add(4);
         singlyLinkedList.add(10);
-        SinglyLinkedList sortedList = singlyLinkedList.sort();
-        Object expected = 4;
-        //when
-        Object actual = sortedList.get(0);
-        //then
-        Assert.assertEquals(expected, actual);
+        singlyLinkedList.sort(singlyLinkedList);
+
+        Integer expected1 = 4;
+        Object actual1 = singlyLinkedList.get(0);
+        Assert.assertEquals(expected1, actual1);
+
+        Integer expected2 = 7;
+        Object actual2 = singlyLinkedList.get(1);
+        Assert.assertEquals(expected2, actual2);
+
+        Integer expected3 = 10;
+        Object actual3 = singlyLinkedList.get(2);
+        Assert.assertEquals(expected3, actual3);
     }
 
     @Test
