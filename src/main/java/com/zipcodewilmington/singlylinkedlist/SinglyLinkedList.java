@@ -11,7 +11,7 @@ public class SinglyLinkedList<T extends Comparable<T>> {
     private static int counter;
 
     class Node<T extends Comparable<T>> implements Comparator<T> {
-        Node next;
+        Node<T> next;
         T data;
 
         public T getData() {
@@ -22,7 +22,7 @@ public class SinglyLinkedList<T extends Comparable<T>> {
             this.data = data;
         }
 
-        public Node getNext() {
+        public Node<T> getNext() {
             return this.next;
         }
 
@@ -45,19 +45,19 @@ public class SinglyLinkedList<T extends Comparable<T>> {
         }
     }
 
-    private Node head;
-    private Node current;
+    private Node<T> head;
+    private Node<T> current;
     //private int listCount;
 
     public SinglyLinkedList() {
-        head = new Node(null);
+        head = new Node<T>(null);
         //listCount = 0;
         counter = 0;
     }
 
     public void add(T data) {
-        Node temp = new Node(data);
-        Node current = head;
+        Node<T> temp = new Node(data);
+        Node<T> current = head;
         while (current.getNext() != null) {
             current = current.getNext();
         }
@@ -71,8 +71,8 @@ public class SinglyLinkedList<T extends Comparable<T>> {
     }
 
     public void add(T data, int index) {
-        Node temp = new Node(data);
-        Node current = head;
+        Node<T> temp = new Node(data);
+        Node<T> current = head;
 
         if (current != null) {
             for (int i = 0; i < index && current.getNext() != null; i++) {
@@ -86,7 +86,7 @@ public class SinglyLinkedList<T extends Comparable<T>> {
 
     public T get(int index) {
         if (index < 0) return null;
-        Node current = null;
+        Node<T> current = null;
         if (head != null) {
             current = head.getNext();
             for (int i = 0; i < index; i++) {
@@ -101,7 +101,7 @@ public class SinglyLinkedList<T extends Comparable<T>> {
     public boolean remove(int index) {
         if (index < 1 || index > size()) return false;
 
-        Node current = head;
+        Node<T> current = head;
         if (head != null) {
             for (int i = 0; i < index; i++) {
                 if (current.getNext() == null) return false;
@@ -115,7 +115,7 @@ public class SinglyLinkedList<T extends Comparable<T>> {
     }
 
     public boolean contains(T data) {
-        Node current = head;
+        Node<T> current = head;
         if (current.getData() == data) {
             return true;
         } else {
@@ -129,7 +129,7 @@ public class SinglyLinkedList<T extends Comparable<T>> {
 
     public int find(T data) {
         int indexOfData = 0;
-        Node current = head;
+        Node<T> current = head;
         if (contains(data)) {
             if (current.getData() == data) {
                 return indexOfData;
@@ -150,9 +150,9 @@ public class SinglyLinkedList<T extends Comparable<T>> {
         return getCounter();
     }
 
-    public SinglyLinkedList copy() {
-        SinglyLinkedList singlyLinkedList2 = new SinglyLinkedList();
-        Node current = head;
+    public SinglyLinkedList<T> copy() {
+        SinglyLinkedList<T> singlyLinkedList2 = new SinglyLinkedList<T>();
+        Node<T> current = head;
         singlyLinkedList2.add(current.getData());
         while (current.getNext() != null) {
             current = current.getNext();
@@ -161,70 +161,31 @@ public class SinglyLinkedList<T extends Comparable<T>> {
         return singlyLinkedList2;
     }
 
-    public SinglyLinkedList reverse() {
+    public SinglyLinkedList<T> reverse() {
         int size = size();
         int finalIndex = size - 1;
-        SinglyLinkedList reversedList = new SinglyLinkedList();
+        SinglyLinkedList<T> reversedList = new SinglyLinkedList<T>();
         for (int i = finalIndex; i >= 0; i--) {
             reversedList.add(get(finalIndex));
         }
         return reversedList;
     }
 
-    public void sort(SinglyLinkedList passedList) {
-        int currentSize = passedList.size();
-        Node tempNode = null;
-        int temp;
-        for (int i = 0; i < currentSize - 1; i++) {
-            T currentAtI = get(i);
-            for (int j = i + 1; j < currentSize; j++) {
-                T currentAtJ = get(j);
-                if (currentAtI.compareTo(currentAtJ) > 0) {
-                    swap(currentAtI, currentAtJ);
-                    currentAtI = currentAtJ;
-                }
+    public void sort() {
+        Node<T> previous = null;
+        Node<T> current = head;
+        Node<T> next = current.getNext();
+        while (next != null){
+            if ((current.getData()).compareTo(next.getData()) >= 0){
+                // null pointer for line 191.
+                previous = current;
+                current = next;
+            } else {
+                previous = next;
             }
-//        Node previous = null;
-//        Node current = head;
-//        Node next = current.getNext();
-//        while (next != null){
-//            if ((current.getData()).compareTo(next.getData()) >= 0){
-//                // tried to use >= instead. Wont allow it on Objects. "compareTo" unhappy due to lack of interface?
-//                previous = current;
-//                current = next;
-//            } else {
-//                previous = next;
-//            }
-//        }
-//        return null;
         }
     }
-        public void swap(T obj1, T obj2){
-            Node<T> tempNode = head;
-            Node<T> tempNodePrev = null;
-            Node<T> tempNodeNext = null;
-            Node<T> tempNodeNextNext = null;
 
-            tempNodePrev=tempNode;
-            Boolean swapped=false;
-            while (tempNode != null && !swapped){
-                if (tempNode.getData().equals(obj1))
-                {
-                    tempNodeNext=tempNode.getNext(); // Save the Next Node after current Node
-                    tempNodeNextNext=tempNodeNext.getNext(); // save the Next , Next's node after current node.
-                    tempNodePrev.setNext(tempNodeNext); //set the previous node tempNode's next
-                    tempNodeNext.setNext(tempNode); // set to NodeNext to current Node
-                    tempNode.setNext(tempNodeNextNext); // set current node to next /next
-
-                    swapped=true;
-                }
-                else {
-                    tempNodePrev=tempNode;
-                    tempNode = tempNode.getNext();
-                }
-            }
-
-        }
         //optional //public SinglyLinkedList slice(){return null;}
         //optional: can make this list a generic class that can store any kind of object
     }

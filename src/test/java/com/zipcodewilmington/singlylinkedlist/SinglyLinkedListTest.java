@@ -117,7 +117,7 @@ public class SinglyLinkedListTest {
         singlyLinkedList.add(7);
         singlyLinkedList.add(4);
         singlyLinkedList.add(10);
-        singlyLinkedList.sort(singlyLinkedList);
+        singlyLinkedList.sort();
 
         Integer expected1 = 4;
         Object actual1 = singlyLinkedList.get(0);
