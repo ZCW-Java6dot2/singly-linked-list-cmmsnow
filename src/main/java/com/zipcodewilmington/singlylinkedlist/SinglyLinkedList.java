@@ -177,7 +177,7 @@ public class SinglyLinkedList<T extends Comparable<T>> {
         Node<T> next = current.getNext();
         while (next != null){
             if ((current.getData()).compareTo(next.getData()) >= 0){
-                // null pointer for line 191.
+                // null pointer for line 179.
                 previous = current;
                 current = next;
             } else {
